@@ -1,0 +1,52 @@
+{
+  "productName": "VPN Hizb",
+  "version": "1.0.0",
+  "identifier": "com.hizb.vpn-hizb",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "VPN Hizb",
+        "width": 1200,
+        "height": 800,
+        "resizable": true,
+        "center": true,
+        "maximized": true,
+        "minWidth": 900,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png"
+    ],
+    "resources": [],
+    "category": "Utility",
+    "shortDescription": "Public VPN for Everyone",
+    "longDescription": "VPN Hizb is a free and open-source VPN client that provides secure internet access through a global network of public VPN servers.",
+    "linux": {
+      "deb": {
+        "depends": ["openvpn", "curl", "pkexec"],
+        "section": "net"
+      }
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true
+    }
+  }
+}
